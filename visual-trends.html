@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Visual Trends</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+ 
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #F7F9FC;
+      color: #333;
+      overflow-x: hidden;
+    }
+
+   
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #BDE0FE transparent;
+      padding: 15px 40px;
+    }
+
+    nav h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.8rem;
+      color: #468FAF;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #468FAF;
+    }
+
+    
+    .trends-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+      padding: 60px;
+    }
+
+    .trend-box {
+      background: #fff;
+      border-radius: 20px;
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.4s ease;
+      border: 2px solid #BDE0FE;
+      text-decoration: none;
+      color: inherit;
+      position: relative;
+      z-index: 1;
+    }
+
+    .trend-box:hover {
+      transform: scale(1.05);
+    }
+
+    .trend-box img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 15px;
+      margin-bottom: 15px;
+    }
+
+   
+    .modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: none;
+      justify-content: center;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(0px);
+      z-index: 999;
+      opacity: 0;
+      transition: all 0.4s ease;
+    }
+
+    .modal:target {
+      display: flex;
+      opacity: 1;
+      backdrop-filter: blur(10px);
+    }
+
+    .modal-content {
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      max-width: 90%;
+      max-height: 80%;
+      overflow-y: auto;
+      border: 2px solid #BDE0FE;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      animation: fadeIn 0.4s ease;
+      position: relative;
+      z-index: 1000;
+    }
+
+    .modal-content img {
+      width: 220px;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 15px;
+      transition: transform 0.3s ease;
+    }
+
+    .modal-content img:hover {
+      transform: scale(1.05);
+    }
+
+    .close {
+      position: absolute;
+      top: 0px;
+      right: 10px;
+      font-size: 2rem;
+      color: #468FAF;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    .close:hover {
+      color: #1b6f91;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+   
+    @media (max-width: 768px) {
+      .trends-container {
+        padding: 40px 20px;
+      }
+
+      .modal-content img {
+        width: 140px;
+        height: 140px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+
+  <nav>
+    <h1>POP FUTURE</h1>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="visual-trends.html" class="active">Visual Trends</a></li>
+      <li><a href="typography-color.html">Typography & Color</a></li>
+      <li><a href="layout-innovations.html">Layout Innovations</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+ 
+  <section class="trends-container">
+    <a href="#vaporwave" class="trend-box">
+      <img src="vaporwave1.jpg" alt="Vaporwave Revival">
+      <h3>Vaporwave Revival</h3>
+      <p>Vaporwave is a microgenre of electronic music and an internet-based art movement that emerged in the early 2010s. The aesthetic blends classical statues, early web design, and 90s nostalgia.</p>
+    </a>
+
+    <a href="#webcore" class="trend-box">
+      <img src="webcore1.jfif" alt="Webcore">
+      <h3>Webcore</h3>
+      <p>Webcore, also known as Internetcore, captures the nostalgic charm of early internet visuals — pixel graphics, old 3D models, and surreal web textures.</p>
+    </a>
+
+    <a href="#hyperpop" class="trend-box">
+      <img src="hyperpop.jpg" alt="Hyperpop">
+      <h3>Hyperpop</h3>
+      <p>Hyperpop is a loosely-defined electronic music and cultural movement characterized by maximalist, deconstructed pop infused with avant-garde energy.</p>
+    </a>
+  </section>
+
+ 
+  <section id="vaporwave" class="modal">
+    <div class="modal-content">
+      <a href="#" class="close">&times;</a>
+      <img src="vaporwave1.jpg" alt="">
+      <img src="vaporwave2.jpg" alt="">
+      <img src="vaporwave3.jpg" alt="">
+    </div>
+  </section>
+
+  <section id="webcore" class="modal">
+    <div class="modal-content">
+      <a href="#" class="close">&times;</a>
+      <img src="webcore1.jfif" alt="">
+      <img src="webcore2.jpg" alt="">
+      <img src="webcore3.png" alt="">
+    </div>
+  </section>
+
+  <section id="hyperpop" class="modal">
+    <div class="modal-content">
+      <a href="#" class="close">&times;</a>
+      <img src="hyperpop.jpg" alt="">
+      <img src="hyperpop2.jpg" alt="">
+      <img src="hyperpop3.jpg" alt="">
+    </div>
+  </section>
+
+</body>
+</html>
